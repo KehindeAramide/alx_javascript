@@ -1,5 +1,5 @@
 //Update this script by adding a new function incr that increments the integer value
-function incr() {
+function increment() {
     this.value++;
   }
   
