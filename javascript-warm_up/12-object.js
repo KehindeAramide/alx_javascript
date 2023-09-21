@@ -2,4 +2,4 @@
 
 let myVariable = 12;
 myVariable = 89;
-    console.log(myVariable);
+console.log(myVariable);
