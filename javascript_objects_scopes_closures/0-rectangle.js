@@ -3,4 +3,5 @@ class Rectangle {
     constructor() {
     }
 }
-module.export = Rectangle;
+const r1 = new Rectangle();
+console.log(r1);
