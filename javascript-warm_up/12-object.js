@@ -1,5 +1,9 @@
-// Writing this script to replce the value of 12 with 89
+// Writing this script to replaces the value of 12 with 89
 
-let myVariable = 12;
-myVariable = 89;
-console.log(myVariable);
+const myObject = {
+    value: 12
+  };
+  
+  myObject.value = 89;
+  console.log(myObject.value);
+  
