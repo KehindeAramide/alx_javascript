@@ -1,9 +1,18 @@
-#!/usr/bin/node
-const myVar = 12;
+//Update this script by adding a new function incr that increments the integer value
 
-function incr(value) {
-  return value + 1;
-}
+const myVar = {
+  type: 'object',
+  value: 12,
+  incr: function() {
+    this.value++;
+  }
+};
 
 console.log(myVar);
-console.log(incr(myVar));
+myVar.incr();
+console.log(myVar);
+myVar.incr();
+console.log(myVar);
+myVar.incr();
+console.log(myVar);
+
