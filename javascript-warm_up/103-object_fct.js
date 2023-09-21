@@ -1,18 +1,17 @@
 //Update this script by adding a new function incr that increments the integer value
-function increment() {
-    this.value++;
-  }
-  
-  const myVar = {
+const myObject = {
     type: 'object',
     value: 12,
-    incr: increment,
+    incr: function increment() {
+      this.value += 1;
+    }
   };
   
-  console.log(myVar);
-  myVar.incr();
-  console.log(myVar);
-  myVar.incr();
-  console.log(myVar);
-  myVar.incr();
-  console.log(myVar);
+  console.log(myObject);
+  myObject.incr();
+  console.log(myObject);
+  myObject.incr();
+  console.log(myObject);
+  myObject.incr();
+  console.log(myObject);
+  
