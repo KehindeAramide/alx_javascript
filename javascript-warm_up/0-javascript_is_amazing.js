@@ -1,3 +1,4 @@
 /* This writes a script that prints “JavaScript is amazing”*/
-const myHeading = document.querySelector("hi");
-myHeading.textContent = "JavaScript is amazing"
+
+const myVar = "JavaScript is amazing";
+console.log(myVar);
