@@ -3,5 +3,3 @@
 function add(a, b) {
     return a + b;
   }
-//const result = add(x, y);
-//console.log(result); 
