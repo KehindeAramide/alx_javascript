@@ -25,7 +25,7 @@ request(url, (error, response, body) => {
         console.error('Error writing to file:', err);
         process.exit(1);
       }
-      console.log(`Webpage content saved to ${filePath}`);
+      console.log({filePath});
     });
   } else {
     console.error(`Failed to fetch the webpage. Status code: ${response.statusCode}`);
