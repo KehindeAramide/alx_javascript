@@ -1,4 +1,4 @@
-//
+//Writes a script that computes the number of tasks completed by user id.
 const request = require('request');
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/todos';
@@ -31,8 +31,10 @@ request(apiUrl, (error, response, body) => {
     }
   });
 
-  // Print the counts
-  for (const userId in userCompletedTasks) {
-    console.log(`User ${userId} completed ${userCompletedTasks[userId]} tasks.`);
-  }
+  // Filter users with exactly 3 completed tasks
+  const usersWithThreeTasks = Object.keys(userCompletedTasks).filter(
+    (userId) => userCompletedTasks[userId] === 3
+  );
+
+  console.log(`${usersWithThreeTasks.length} users - 3 tasks completed for each`);
 });
