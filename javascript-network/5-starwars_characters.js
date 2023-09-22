@@ -1,6 +1,7 @@
+//
 const request = require('request');
 
-const movieId = 3; // Replace with the desired movie ID
+const movieId = 1; // Replace with the desired movie ID
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 
 request(apiUrl, (error, response, body) => {
@@ -39,5 +40,11 @@ request(apiUrl, (error, response, body) => {
     });
   }
 
-  fetchAndPrintCharacterNames(characterUrls);
+  // Divide the character URLs into two arrays based on the API response structure
+  const characterUrlsPart1 = characterUrls.slice(0, 10);
+  const characterUrlsPart2 = characterUrls.slice(10);
+
+  // Fetch and print characters from both parts
+  fetchAndPrintCharacterNames(characterUrlsPart1);
+  fetchAndPrintCharacterNames(characterUrlsPart2);
 });
