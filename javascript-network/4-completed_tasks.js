@@ -36,5 +36,5 @@ request(apiUrl, (error, response, body) => {
     (userId) => userCompletedTasks[userId] === 3
   );
 
-  console.log(`${usersWithThreeTasks.length} users - 3 tasks completed for each`);
+  console.log(usersWithThreeTasks.length + " users - 3 tasks completed for each");
 });
