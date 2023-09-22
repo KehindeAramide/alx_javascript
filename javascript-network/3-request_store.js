@@ -1,3 +1,4 @@
+//Writes a script that gets the contents of a webpage and stores it in a file.
 const request = require('request');
 const fs = require('fs');
 
@@ -19,13 +20,13 @@ request(url, (error, response, body) => {
 
   // Check if the request was successful (status code 200)
   if (response.statusCode === 200) {
-    // Write the response body to the specified file
+    // Write the response body (webpage content) to the specified file as plain text
     fs.writeFile(filePath, body, 'utf-8', (err) => {
       if (err) {
         console.error('Error writing to file:', err);
         process.exit(1);
       }
-      console.log({filePath});
+      console.log(`Webpage content saved to ${filePath}`);
     });
   } else {
     console.error(`Failed to fetch the webpage. Status code: ${response.statusCode}`);
