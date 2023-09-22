@@ -26,10 +26,13 @@ request.get(apiUrl, (error, response, body) => {
 
   // Loop through the films and check if Wedge Antilles is in the character list
   for (const film of filmData.results) {
-    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
+    const characters = film.characters.map((character) =>
+      character.replace('https://swapi-api.alx-tools.com/api/people/', '').replace('/', '')
+    );
+    if (characters.includes(characterId.toString())) {
       count++;
     }
   }
 
-  console.log(count);
+  console.log(`Number of movies with Wedge Antilles: ${count}`);
 });
