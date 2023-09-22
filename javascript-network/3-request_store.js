@@ -17,6 +17,6 @@ request(url, (error, response, body) => {
       return;
     }
     //console.log('Webpage content saved to', filePath);
-    console.log(body); // This line will print the webpage content to the console
+    //console.log(body); // This line will print the webpage content to the console
   });
 });
