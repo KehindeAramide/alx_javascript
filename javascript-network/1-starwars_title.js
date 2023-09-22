@@ -24,7 +24,7 @@ request.get(apiUrl, (error, response, body) => {
 
   // Check if the response contains a title
   if (movieData.title) {
-    console.log('Title:', movieData.title);
+    console.log(movieData.title);
   } else {
     console.error('Movie not found.');
   }
