@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+<body>
+    <div>
+        <h2>Login to the website</h2>
+        <input type="text" id="firstname" placeholder="First Name">
+        <input type="text" id="email" placeholder="Email">
+        <button id="logInButton">Log me in</button>
+    </div>
+    <div>
+        <h2>Cookies</h2>
+        <button id="showCookiesButton">Show the cookies</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function setCookies() {
+            const firstnameInput = document.getElementById("firstname").value;
+            const emailInput = document.getElementById("email").value;
+            // set cookies fot firstname and email
+            document.cookie = 'firstname=${firstnameInput}';
+            document.cookie = 'email=${emailInput}';
+        }
+        function showcookies() {
+            const firstnameCookie = getCookie("firstname");
+            const emailCookie = getCookie("email");
+
+            //creating a paragraph element
+            const paragraph = document.createElement("p");
+            // Set the innerHTML of the paragraph with the cookies' values
+            paragraph.innerHTML = `Cookies: Firstname - ${firstnameCookie}, Email - ${emailCookie}`;
+
+            // Append the paragraph to the bottom of the page
+            document.body.appendChild(paragraph);
+        }
+            // Function to retrieve a specific cookie value by its name
+        function getCookie(name) {
+            const cookies = document.cookie.split(" ; ");
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].split("=");
+                if (cookie[0] === name){
+                    return cookie[i];
+                }
+            }
+            return null;
+        }
+            
+    </script>
+        
+
+
+</body>
+</html>
