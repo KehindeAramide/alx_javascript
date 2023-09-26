@@ -18,16 +18,19 @@
     </div>
     <script src="node_modules/.bin/webpack-dev-server"></script>
     <script>
+        // Function to set cookies with a 10-day expiration
         function setCookies() {
-            const firstnameInput = document.getElementById("firstname").value;
-            const emailInput = document.getElementById("email").value;
-            //1odays expiration
-            const expirationDate = newDate();
-            expirationDate.setDate(expirationDate.getDate() + 10);
-            // set cookies to firstname and email
-            document.cookie = 'firstname=${firstnameInput}';
-            document.cookie = 'email=${emailInput}';
+            const firstNameValue = document.getElementById('firstname').value;
+            const emailValue = document.getElementById('email').value;
+
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 10); // 10 days from now
+
+            // Set cookies with expiration
+            document.cookie = `firstname=${firstNameValue}; expires=${expirationDate.toUTCString()}`;
+            document.cookie = `email=${emailValue}; expires=${expirationDate.toUTCString()}`;
         }
+        
         function showcookies() {
             const firstnameCookie = getCookie("firstname");
             const emailCookie = getCookie("email");
