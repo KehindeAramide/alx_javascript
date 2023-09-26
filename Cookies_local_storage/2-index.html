@@ -6,10 +6,16 @@
     <title>Cookies Example</title>
 </head>
 <body>
-    <input type="text" id="firstname" placeholder="First Name">
-    <input type="text" id="email" placeholder="Email">
-    <button onclick="setCookies()">Log me in</button>
-    <button onclick="showCookies()">Show the cookies</button>
+    <div>
+        <h2>Login to the website</h2>
+        <input type="text" id="firstname" placeholder="First Name">
+        <input type="text" id="email" placeholder="Email">
+        <button id="logInButton">Log me in</button>
+    </div>
+    <div>
+        <h2>Cookies</h2>
+        <button id="showCookiesButton">Show the cookies</button>
+    </div>
     
     <script>
         function setCookies() {
