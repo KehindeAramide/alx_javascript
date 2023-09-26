@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies and Login</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.1.1/dist/js.cookie.min.js"></script>
+</head>
+<body>
+    <div id="login-form" style="display: none;">
+        <h2>Login</h2>
+        <input type="text" id="firstname" placeholder="First Name">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+    </div>
+    <h1 id="welcome-message"></h1>
+    <script>
+        function setCookiesAndShowWelcomeMessage() {
+            const firstNameValue = document.getElementById('firstname').value;
+            const emailValue = document.getElementById('email').value;
+
+            const expirationDate = new Date();
+            expirationDate.setDate(expirationDate.getDate() + 10); // 10 days from now
+
+            // Use js-cookie to set cookies
+            Cookies.set('firstname', firstNameValue, { expires: expirationDate });
+            Cookies.set('email', emailValue, { expires: expirationDate });
+
+            showWelcomeMessageOrForm();
+        }
+
+        function showForm() {
+            const welcomeMessage = document.getElementById('welcome-message');
+            if (welcomeMessage) {
+                welcomeMessage.style.display = 'none';
+            }
+
+            const loginForm = document.getElementById('login-form');
+            loginForm.style.display = 'block';
+        }
+
+        function deleteCookiesAndShowForm() {
+            // Use js-cookie to remove cookies
+            Cookies.remove('firstname');
+            Cookies.remove('email');
+            showForm();
+        }
+
+        function showWelcomeMessageOrForm() {
+            const firstname = Cookies.get('firstname');
+            if (firstname) {
+                const welcomeMessage = document.getElementById('welcome-message');
+                welcomeMessage.textContent = `Welcome: ${firstname} (logout)`;
+                welcomeMessage.style.fontStyle = 'italic';
+                welcomeMessage.style.fontWeight = 'normal';
+            } else {
+                showForm();
+            }
+        }
+
+        showWelcomeMessageOrForm();
+    </script>
+</body>
+</html>
