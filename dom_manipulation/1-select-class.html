@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecting Elements</title>
+</head>
+<body>
+    <p>This is a paragraph.</p>
+    <p class="highlight">This is a highlighted paragraph.</p>
+    <p class="highlight">Another highlighted paragraph.</p>
+
+    <script>
+        const highlightedParagraph = document.querySelectorAll("p.highlight");
+        highlightedParagraphs.forEach((paragraph) => {
+            paragraph.style.fontWeight = "bold";
+        });
+    </script>
+</body>
+</html>
