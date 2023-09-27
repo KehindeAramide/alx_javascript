@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Images</title>
+</head>
+<body>
+    <img id="myImage" src="https://picsum.photos/200/300" alt="original Image" style="border: 1px solid black;">
+
+    <script>
+        const imageElement = document.getElementById("myImage");
+        imageElement.scr = "https://picsum.photos/200/301"
+        imageElement.alt = "New Image";
+        imageElement.style.border = "2px solid red";
+    </script>
+</body>
+</html>
