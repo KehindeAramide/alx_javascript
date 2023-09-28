@@ -1,20 +1,20 @@
 // Function to validate the password
 function validatePassword() {
     // Retrieve the password input element
-    var passwordInput = document.getElementById("password");
+    const passwordInput = document.getElementById("password");
     
     // Retrieve the error message element
-    var errorMessage = document.getElementById("error");
+    const errorMessage = document.getElementById("error");
     
     // Regular expressions for password criteria
-    var lengthRegex = /.{8,}/;
-    var uppercaseRegex = /[A-Z]/;
-    var lowercaseRegex = /[a-z]/;
-    var digitRegex = /\d/;
-    var specialCharRegex = /[!@#$%^&*]/;
+    const lengthRegex = /.{8,}/;
+    const uppercaseRegex = /[A-Z]/;
+    const lowercaseRegex = /[a-z]/;
+    const digitRegex = /\d/;
+    const specialCharRegex = /[!@#$%^&*]/;
     
     // Retrieve the password value from the input field
-    var password = passwordInput.value;
+    const password = passwordInput.value;
     
     // Check if the password meets all criteria
     if (
